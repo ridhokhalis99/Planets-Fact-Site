@@ -30,6 +30,10 @@ planetsLinks.forEach(planetLink => {
     planetDescription.innerHTML = planet.overview.content
     planetSource.setAttribute('href', planet.overview.source)
     planetImage.setAttribute('src', planet.images.planet)
+
+    if (!planetSurface.classList.contains('hidden')) {
+      planetSurface.classList.add('hidden')
+    }
   })
 })
 
@@ -59,5 +63,3 @@ planetDetailLinks.forEach(button => {
     }
   })
 })
-
-console.log('test')
