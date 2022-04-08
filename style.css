@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
+
+:root {
+  --white: #fff;
+  --light-gray: #e4e4e4;
+  --mid-gray: #7e7e92;
+  --dark-gray: #38384f;
+  --Mercury-theme: #419ebb;
+  --Venus-theme: #eda249;
+  --Earth-theme: #6f2ef6;
+  --Mars-theme: #d14c32;
+  --Jupiter-theme: #d83a34;
+  --Saturn-theme: #cd5120;
+  --Uranus-theme: #1ec2a4;
+  --Neptune-theme: #2d68f0;
+}
+
+body {
+  background: url('./assets/background-stars.svg') rgb(7, 7, 36);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: 'Antonio', sans-serif;
+  font-weight: 500;
+}
+
+h3,
+h4,
+h5,
+li,
+p {
+  font-family: 'Spartan', sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-transparent {
+  font-family: 'Antonio', sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  color: var(--white);
+  font-size: 1.75rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand:hover {
+  color: var(--white);
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  color: var(--light-gray);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.nav-link:hover {
+  color: var(--light-gray);
+}
+
+.nav-link:focus {
+  color: var(--light-gray);
+}
+
+#Mercury:hover,
+#Mercury:focus {
+  border-bottom: 3px solid var(--Mercury-theme);
+  margin-bottom: -3px;
+}
+
+#Venus:hover,
+#Venus:focus {
+  border-bottom: 3px solid var(--Venus-theme);
+  margin-bottom: -3px;
+}
+
+#Earth:hover,
+#Earth:focus {
+  border-bottom: 3px solid var(--Earth-theme);
+  margin-bottom: -3px;
+}
+
+#Mars:hover,
+#Mars:focus {
+  border-bottom: 3px solid var(--Mars-theme);
+  margin-bottom: -3px;
+}
+
+#Jupiter:hover,
+#Jupiter:focus {
+  border-bottom: 3px solid var(--Jupiter-theme);
+  margin-bottom: -3px;
+}
+
+#Saturn:hover,
+#Saturn:focus {
+  border-bottom: 3px solid var(--Saturn-theme);
+  margin-bottom: -3px;
+}
+
+#Uranus:hover,
+#Uranus:focus {
+  border-bottom: 3px solid var(--Uranus-theme);
+  margin-bottom: -3px;
+}
+
+#Neptune:hover,
+#Neptune:focus {
+  border-bottom: 3px solid var(--Neptune-theme);
+  margin-bottom: -3px;
+}
+
+.infographic {
+  margin-top: 80px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.planet-surface {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 60%;
+  height: 40%;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.infographic .planet-name {
+  font-size: 5rem;
+}
+
+.infographic .planet-description {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  margin-top: 30px;
+}
+
+.infographic .source {
+  color: var(--light-gray);
+  font-size: 0.875rem;
+}
+
+.infographic .source a {
+  color: var(--light-gray);
+  font-size: 0.875rem;
+}
+
+.infographic .source a:hover {
+  color: var(--mid-gray);
+}
+
+.infographic .planet-nav {
+  margin-top: 50px;
+}
+
+.infographic .planet-nav-item {
+  color: var(--white);
+  margin-bottom: 15px;
+  padding: 20px 30px;
+  width: 100%;
+}
+
+.infographic .transparent {
+  border: 0.1px solid var(--dark-gray);
+  background: transparent;
+}
+
+.infographic .planet-nav-item:focus {
+  background: var(--Earth-theme);
+  border: none;
+}
+
+.infographic .planet-nav-item:hover {
+  background: var(--dark-gray);
+}
+
+.infographic .planet-nav-item h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.infographic .planet-nav-item .planet-nav-number {
+  color: var(--light-gray);
+}
+
+.infographic .planet-nav-item .planet-nav-address {
+  margin-left: 30px;
+}
+
+.planet-specification {
+  margin: 80px 0 50px 0;
+  padding: 0px;
+}
+
+.planet-specification .card-data {
+  border: 0.1px solid var(--dark-gray);
+  padding: 25px 20px;
+  width: 100%;
+}
+
+.planet-specification .card-data h4 {
+  color: var(--mid-gray);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.planet-specification .card-data h2 {
+  font-size: 2.5rem;
+}
