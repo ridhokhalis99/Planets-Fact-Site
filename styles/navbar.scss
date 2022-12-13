@@ -1,0 +1,72 @@
+@import "./colors.scss";
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 64px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    .nav-link {
+      color: $regent-grey;
+      transition: all 0.1s linear;
+    }
+    .nav-link:hover {
+      color: $white;
+    }
+    .nav-link-active {
+      color: $white;
+    }
+
+    .nav-link-border {
+      position: absolute;
+      border: 1px solid;
+      z-index: 5;
+      top: -32px;
+      opacity: 0;
+      transition: all 0.25s linear;
+    }
+
+    .nav-link-active-mercury {
+      border-color: $mercury;
+      opacity: 1;
+    }
+
+    .nav-link-active-venus {
+      border-color: $venus;
+      opacity: 1;
+    }
+
+    .nav-link-active-earth {
+      border-color: $earth;
+      opacity: 1;
+    }
+
+    .nav-link-active-mars {
+      border-color: $mars;
+      opacity: 1;
+    }
+
+    .nav-link-active-jupiter {
+      border-color: $jupiter;
+      opacity: 1;
+    }
+
+    .nav-link-active-saturn {
+      border-color: $saturn;
+      opacity: 1;
+    }
+
+    .nav-link-active-uranus {
+      border-color: $uranus;
+      opacity: 1;
+    }
+
+    .nav-link-active-neptune {
+      border-color: $neptune;
+      opacity: 1;
+    }
+  }
+}

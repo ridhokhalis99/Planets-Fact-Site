@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap");
+.m-0 {
+  margin: 0;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: #070724;
+  color: white;
+}
+
+.button {
+  border: 1px solid #393950;
+  transition: all 0.25s linear;
+}
+
+.button:hover {
+  background-color: #393950;
+  scale: 105%;
+}
+
+.button-active-mercury {
+  background-color: #419ebb;
+}
+
+.button-active-venus {
+  background-color: #eda249;
+}
+
+.button-active-earth {
+  background-color: #6d2ed5;
+}
+
+.button-active-mars {
+  background-color: #d14c32;
+}
+
+.button-active-jupiter {
+  background-color: #d83a34;
+}
+
+.button-active-saturn {
+  background-color: #cd5120;
+}
+
+.button-active-uranus {
+  background-color: #1ec1a2;
+}
+
+.button-active-neptune {
+  background-color: #2d68f0;
+}
+
+body {
+  background-color: #070724;
+  color: white;
+}
+
+body {
+  background-color: #070724;
+  color: white;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 64px;
+}
+#navbar div {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+#navbar div .nav-link {
+  color: #90909d;
+  transition: all 0.1s linear;
+}
+#navbar div .nav-link:hover {
+  color: white;
+}
+#navbar div .nav-link-active {
+  color: white;
+}
+#navbar div .nav-link-border {
+  position: absolute;
+  border: 1px solid;
+  z-index: 5;
+  top: -32px;
+  opacity: 0;
+  transition: all 0.25s linear;
+}
+#navbar div .nav-link-active-mercury {
+  border-color: #419ebb;
+  opacity: 1;
+}
+#navbar div .nav-link-active-venus {
+  border-color: #eda249;
+  opacity: 1;
+}
+#navbar div .nav-link-active-earth {
+  border-color: #6d2ed5;
+  opacity: 1;
+}
+#navbar div .nav-link-active-mars {
+  border-color: #d14c32;
+  opacity: 1;
+}
+#navbar div .nav-link-active-jupiter {
+  border-color: #d83a34;
+  opacity: 1;
+}
+#navbar div .nav-link-active-saturn {
+  border-color: #cd5120;
+  opacity: 1;
+}
+#navbar div .nav-link-active-uranus {
+  border-color: #1ec1a2;
+  opacity: 1;
+}
+#navbar div .nav-link-active-neptune {
+  border-color: #2d68f0;
+  opacity: 1;
+}
+
+body {
+  background-color: #070724;
+  color: white;
+}
+
+.antonio-medium {
+  font-family: Antonio;
+  font-weight: 500;
+}
+
+.spartan-regular {
+  font-family: League Spartan;
+  font-weight: 400;
+}
+
+.spartan-semibold {
+  font-family: League Spartan;
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-36 {
+  font-size: 36px;
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
+.font-60 {
+  font-size: 60px;
+}
+
+.tracking-wide {
+  letter-spacing: 0.1rem;
+}
+
+.text-regent-grey {
+  color: #90909d;
+}
+
+.external-link {
+  color: #90909d;
+  text-decoration: underline;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  font-family: League Spartan, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #070724;
+  color: white;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.grey-border {
+  border: 1px solid #393950;
+}
+
+.grey-border-b {
+  border-bottom: 1px solid #393950;
+}
+
+/*# sourceMappingURL=globals.css.map */

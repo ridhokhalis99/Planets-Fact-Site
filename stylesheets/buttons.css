@@ -1,0 +1,48 @@
+body {
+  background-color: #070724;
+  color: white;
+}
+
+.button {
+  border: 1px solid #393950;
+  transition: all 0.25s linear;
+}
+
+.button:hover {
+  background-color: #393950;
+  scale: 105%;
+}
+
+.button-active-mercury {
+  background-color: #419ebb;
+}
+
+.button-active-venus {
+  background-color: #eda249;
+}
+
+.button-active-earth {
+  background-color: #6d2ed5;
+}
+
+.button-active-mars {
+  background-color: #d14c32;
+}
+
+.button-active-jupiter {
+  background-color: #d83a34;
+}
+
+.button-active-saturn {
+  background-color: #cd5120;
+}
+
+.button-active-uranus {
+  background-color: #1ec1a2;
+}
+
+.button-active-neptune {
+  background-color: #2d68f0;
+}
+
+/*# sourceMappingURL=buttons.css.map */

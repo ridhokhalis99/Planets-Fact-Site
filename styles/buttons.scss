@@ -1,0 +1,43 @@
+@import "./colors.scss";
+
+.button {
+  border: 1px solid $bright-grey;
+  transition: all 0.25s linear;
+}
+
+.button:hover {
+  background-color: $bright-grey;
+  scale: 105%;
+}
+
+.button-active-mercury {
+  background-color: $mercury;
+}
+
+.button-active-venus {
+  background-color: $venus;
+}
+
+.button-active-earth {
+  background-color: $earth;
+}
+
+.button-active-mars {
+  background-color: $mars;
+}
+
+.button-active-jupiter {
+  background-color: $jupiter;
+}
+
+.button-active-saturn {
+  background-color: $saturn;
+}
+
+.button-active-uranus {
+  background-color: $uranus;
+}
+
+.button-active-neptune {
+  background-color: $neptune;
+}

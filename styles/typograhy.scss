@@ -1,0 +1,66 @@
+@import "./colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap");
+
+.antonio-medium {
+  font-family: Antonio;
+  font-weight: 500;
+}
+
+.spartan-regular {
+  font-family: League Spartan;
+  font-weight: 400;
+}
+
+.spartan-semibold {
+  font-family: League Spartan;
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-36 {
+  font-size: 36px;
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
+.font-60 {
+  font-size: 60px;
+}
+
+.tracking-wide {
+  letter-spacing: 0.1rem;
+}
+
+.text-regent-grey {
+  color: $regent-grey;
+}
+
+.external-link {
+  color: $regent-grey;
+  text-decoration: underline;
+}

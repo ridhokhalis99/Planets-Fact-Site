@@ -1,0 +1,67 @@
+body {
+  background-color: #070724;
+  color: white;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 64px;
+}
+#navbar div {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+#navbar div .nav-link {
+  color: #90909d;
+  transition: all 0.1s linear;
+}
+#navbar div .nav-link:hover {
+  color: white;
+}
+#navbar div .nav-link-active {
+  color: white;
+}
+#navbar div .nav-link-border {
+  position: absolute;
+  border: 1px solid;
+  z-index: 5;
+  top: -32px;
+  opacity: 0;
+  transition: all 0.25s linear;
+}
+#navbar div .nav-link-active-mercury {
+  border-color: #419ebb;
+  opacity: 1;
+}
+#navbar div .nav-link-active-venus {
+  border-color: #eda249;
+  opacity: 1;
+}
+#navbar div .nav-link-active-earth {
+  border-color: #6d2ed5;
+  opacity: 1;
+}
+#navbar div .nav-link-active-mars {
+  border-color: #d14c32;
+  opacity: 1;
+}
+#navbar div .nav-link-active-jupiter {
+  border-color: #d83a34;
+  opacity: 1;
+}
+#navbar div .nav-link-active-saturn {
+  border-color: #cd5120;
+  opacity: 1;
+}
+#navbar div .nav-link-active-uranus {
+  border-color: #1ec1a2;
+  opacity: 1;
+}
+#navbar div .nav-link-active-neptune {
+  border-color: #2d68f0;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=navbar.css.map */
