@@ -30,6 +30,7 @@ export const ContentContextProvider = ({ children }: { children: any }) => {
 
   useEffect(() => {
     setCurrentContentType("Overview");
+    setCurrentContent(currentPlanet["overview"]);
   }, [currentPlanet]);
 
   const value = {
