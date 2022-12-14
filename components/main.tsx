@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Buttons from "./buttons";
+import { motion } from "framer-motion";
 import { currentContentDecider } from "../tools/constants";
 import { useContentDecider } from "../contexts/contentContext";
 
@@ -17,10 +18,15 @@ const Main = () => {
         gridTemplateColumns: "4fr 3fr",
         gap: "40px",
         maxWidth: "1280px",
-        margin: "120-px auto 92px",
+        width: "80%",
+        margin: "120px auto 92px",
       }}
     >
-      <div
+      <motion.div
+        key={currentPlanet.name}
+        initial={{ opacity: 0, scale: 0.1, rotate: 180 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 1 }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -37,7 +43,10 @@ const Main = () => {
           }}
         />
         {isGeology && (
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             style={{
               width: "40%",
               height: "40%",
@@ -53,9 +62,9 @@ const Main = () => {
                 objectFit: "contain",
               }}
             />
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
       <div
         style={{
           height: "500px",
@@ -64,9 +73,24 @@ const Main = () => {
           justifyContent: "space-between",
         }}
       >
-        <h1 className="antonio-medium uppercase font-60 m-0">
-          {currentPlanet.name}
-        </h1>
+        <div
+          style={{
+            overflow: "hidden",
+            display: "flex",
+          }}
+          key={currentPlanet.name}
+        >
+          {currentPlanet.name.split("").map((char, index) => (
+            <motion.h1
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 + index / 10 }}
+              className="antonio-medium uppercase font-60 m-0"
+            >
+              {char}
+            </motion.h1>
+          ))}
+        </div>
         <p
           className="m-0"
           style={{

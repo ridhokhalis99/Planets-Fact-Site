@@ -7,7 +7,14 @@ const Navbar = () => {
   const { currentPlanet, setCurrentPlanet } = useContentDecider();
   return (
     <div id="navbar" className="grey-border-b">
-      <a className="antonio-medium uppercase font-28">The Planets</a>
+      <a
+        className="antonio-medium uppercase font-28"
+        onClick={() => {
+          setCurrentPlanet(planets[2]);
+        }}
+      >
+        The Planets
+      </a>
       <div>
         {planets.map(({ name }: { name: string }, index: number) => {
           const isPlanetActive = name === currentPlanet.name;

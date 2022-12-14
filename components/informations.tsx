@@ -43,6 +43,7 @@ const Informations = () => {
         gridTemplateColumns: "repeat(4,1fr)",
         gap: "32px",
         maxWidth: "1280px",
+        width: "80%",
         margin: "0px auto 56px",
       }}
     >
