@@ -72,35 +72,27 @@ body {
 }
 @media (max-width: 1024px) {
   #navbar {
-    margin-top: 12px;
     flex-direction: column;
     gap: 52px;
     text-align: center;
   }
 }
-#navbar .nav-link-wrapper {
+#navbar div {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  font-size: 14px;
 }
-@media (max-width: 1024px) {
-  #navbar .nav-link-wrapper {
-    margin: 0 auto;
-    font-size: 12px;
-  }
-}
-#navbar .nav-link-wrapper .nav-link {
+#navbar div .nav-link {
   color: #90909d;
   transition: all 0.1s linear;
 }
-#navbar .nav-link-wrapper .nav-link:hover {
+#navbar div .nav-link:hover {
   color: white;
 }
-#navbar .nav-link-wrapper .nav-link-active {
+#navbar div .nav-link-active {
   color: white;
 }
-#navbar .nav-link-wrapper .nav-link-border {
+#navbar div .nav-link-border {
   position: absolute;
   border: 1px solid;
   z-index: 5;
@@ -109,39 +101,39 @@ body {
   transition: all 0.25s linear;
 }
 @media (max-width: 1024px) {
-  #navbar .nav-link-wrapper .nav-link-border {
+  #navbar div .nav-link-border {
     top: 32px;
   }
 }
-#navbar .nav-link-wrapper .nav-link-active-mercury {
+#navbar div .nav-link-active-mercury {
   border-color: #419ebb;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-venus {
+#navbar div .nav-link-active-venus {
   border-color: #eda249;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-earth {
+#navbar div .nav-link-active-earth {
   border-color: #6d2ed5;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-mars {
+#navbar div .nav-link-active-mars {
   border-color: #d14c32;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-jupiter {
+#navbar div .nav-link-active-jupiter {
   border-color: #d83a34;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-saturn {
+#navbar div .nav-link-active-saturn {
   border-color: #cd5120;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-uranus {
+#navbar div .nav-link-active-uranus {
   border-color: #1ec1a2;
   opacity: 1;
 }
-#navbar .nav-link-wrapper .nav-link-active-neptune {
+#navbar div .nav-link-active-neptune {
   border-color: #2d68f0;
   opacity: 1;
 }

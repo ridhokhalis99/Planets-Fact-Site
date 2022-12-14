@@ -15,7 +15,7 @@ const Navbar = () => {
       >
         The Planets
       </a>
-      <div className="nav-link-wrapper">
+      <div>
         {planets.map(({ name }: { name: string }, index: number) => {
           const isPlanetActive = name === currentPlanet.name;
           const isHovered = index === indexHovered;
