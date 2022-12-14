@@ -11,7 +11,8 @@
   @media (max-width: $medium) {
     grid-template-columns: 2fr 2fr;
     height: 400px;
-    margin: 120px auto 320px;
+    margin: 120px auto 300px;
+    width: 90%;
   }
 
   .image-wrapper {

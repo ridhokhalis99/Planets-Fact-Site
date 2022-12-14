@@ -7,15 +7,23 @@
   padding: 20px 64px;
 
   @media (max-width: $medium) {
+    margin-top: 12px;
     flex-direction: column;
     gap: 52px;
     text-align: center;
+    padding: 20px 24px;
   }
 
   div {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+    font-size: 14px;
+
+    @media (max-width: $medium) {
+      margin: 0 auto;
+      font-size: 12px;
+    }
 
     .nav-link {
       color: $regent-grey;

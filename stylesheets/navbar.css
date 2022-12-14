@@ -10,15 +10,24 @@ body {
 }
 @media (max-width: 1024px) {
   #navbar {
+    margin-top: 12px;
     flex-direction: column;
     gap: 52px;
     text-align: center;
+    padding: 20px 24px;
   }
 }
 #navbar div {
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  font-size: 14px;
+}
+@media (max-width: 1024px) {
+  #navbar div {
+    margin: 0 auto;
+    font-size: 12px;
+  }
 }
 #navbar div .nav-link {
   color: #90909d;

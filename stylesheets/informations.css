@@ -9,6 +9,7 @@
 @media (max-width: 1024px) {
   #informations {
     gap: 8px;
+    width: 90%;
   }
 }
 #informations .info-box {
