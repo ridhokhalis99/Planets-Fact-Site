@@ -1,0 +1,45 @@
+#informations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1280px;
+  width: 80%;
+  margin: 0px auto 56px;
+}
+@media (max-width: 1024px) {
+  #informations {
+    gap: 8px;
+  }
+}
+#informations .info-box {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-bottom: 32px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box {
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+  }
+}
+#informations .info-box h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+}
+#informations .info-box h4 {
+  font-size: 36px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box h4 {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=informations.css.map */

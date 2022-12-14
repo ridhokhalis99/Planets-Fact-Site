@@ -12,45 +12,46 @@ body {
   color: white;
 }
 
-.button {
+.button-wrapper .button {
   border: 1px solid #393950;
   transition: all 0.25s linear;
+  display: flex;
+  padding: 20px 32px;
+  cursor: pointer;
+  font-size: 14px;
 }
-
-.button:hover {
+@media (max-width: 1024px) {
+  .button-wrapper .button {
+    padding: 16px 28px;
+    font-size: 12px;
+  }
+}
+.button-wrapper .button:hover {
   background-color: #393950;
   scale: 105%;
 }
-
-.button-active-mercury {
+.button-wrapper .button-active-mercury {
   background-color: #419ebb;
 }
-
-.button-active-venus {
+.button-wrapper .button-active-venus {
   background-color: #eda249;
 }
-
-.button-active-earth {
+.button-wrapper .button-active-earth {
   background-color: #6d2ed5;
 }
-
-.button-active-mars {
+.button-wrapper .button-active-mars {
   background-color: #d14c32;
 }
-
-.button-active-jupiter {
+.button-wrapper .button-active-jupiter {
   background-color: #d83a34;
 }
-
-.button-active-saturn {
+.button-wrapper .button-active-saturn {
   background-color: #cd5120;
 }
-
-.button-active-uranus {
+.button-wrapper .button-active-uranus {
   background-color: #1ec1a2;
 }
-
-.button-active-neptune {
+.button-wrapper .button-active-neptune {
   background-color: #2d68f0;
 }
 
@@ -69,22 +70,37 @@ body {
   justify-content: space-between;
   padding: 20px 64px;
 }
-#navbar div {
+@media (max-width: 1024px) {
+  #navbar {
+    margin-top: 12px;
+    flex-direction: column;
+    gap: 52px;
+    text-align: center;
+  }
+}
+#navbar .nav-link-wrapper {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2.5rem;
+  font-size: 14px;
 }
-#navbar div .nav-link {
+@media (max-width: 1024px) {
+  #navbar .nav-link-wrapper {
+    margin: 0 auto;
+    font-size: 12px;
+  }
+}
+#navbar .nav-link-wrapper .nav-link {
   color: #90909d;
   transition: all 0.1s linear;
 }
-#navbar div .nav-link:hover {
+#navbar .nav-link-wrapper .nav-link:hover {
   color: white;
 }
-#navbar div .nav-link-active {
+#navbar .nav-link-wrapper .nav-link-active {
   color: white;
 }
-#navbar div .nav-link-border {
+#navbar .nav-link-wrapper .nav-link-border {
   position: absolute;
   border: 1px solid;
   z-index: 5;
@@ -92,35 +108,40 @@ body {
   opacity: 0;
   transition: all 0.25s linear;
 }
-#navbar div .nav-link-active-mercury {
+@media (max-width: 1024px) {
+  #navbar .nav-link-wrapper .nav-link-border {
+    top: 32px;
+  }
+}
+#navbar .nav-link-wrapper .nav-link-active-mercury {
   border-color: #419ebb;
   opacity: 1;
 }
-#navbar div .nav-link-active-venus {
+#navbar .nav-link-wrapper .nav-link-active-venus {
   border-color: #eda249;
   opacity: 1;
 }
-#navbar div .nav-link-active-earth {
+#navbar .nav-link-wrapper .nav-link-active-earth {
   border-color: #6d2ed5;
   opacity: 1;
 }
-#navbar div .nav-link-active-mars {
+#navbar .nav-link-wrapper .nav-link-active-mars {
   border-color: #d14c32;
   opacity: 1;
 }
-#navbar div .nav-link-active-jupiter {
+#navbar .nav-link-wrapper .nav-link-active-jupiter {
   border-color: #d83a34;
   opacity: 1;
 }
-#navbar div .nav-link-active-saturn {
+#navbar .nav-link-wrapper .nav-link-active-saturn {
   border-color: #cd5120;
   opacity: 1;
 }
-#navbar div .nav-link-active-uranus {
+#navbar .nav-link-wrapper .nav-link-active-uranus {
   border-color: #1ec1a2;
   opacity: 1;
 }
-#navbar div .nav-link-active-neptune {
+#navbar .nav-link-wrapper .nav-link-active-neptune {
   border-color: #2d68f0;
   opacity: 1;
 }
@@ -194,23 +215,123 @@ body {
   text-decoration: underline;
 }
 
-.text-element {
+#main {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 40px;
+  max-width: 1280px;
+  width: 80%;
+  margin: 120px auto;
+}
+@media (max-width: 1024px) {
+  #main {
+    grid-template-columns: 2fr 2fr;
+    height: 400px;
+    margin: 120px auto 320px;
+  }
+}
+#main .image-wrapper {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
-
-.text-element .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
+@media (max-width: 1024px) {
+  #main .image-wrapper {
+    grid-column: 1/4;
+    height: 350px;
+    margin-bottom: 60px;
+  }
+}
+#main .content-wrapper {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  #main .content-wrapper {
+    display: grid;
+    grid-column: 1/4;
+    grid-template-columns: 2fr 2fr;
+    gap: 60px;
+  }
+}
+#main .content-wrapper .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+}
+#main .content-wrapper .text-wrapper .planet-name {
+  display: flex;
+  font-size: 36px;
+}
+@media (max-width: 1024px) {
+  #main .content-wrapper .text-wrapper .planet-name {
+    font-size: 20px;
+  }
+}
+#main .content-wrapper .text-wrapper .description {
+  text-align: justify;
+  line-height: 1.5rem;
+  font-size: 18px;
+}
+@media (max-width: 1024px) {
+  #main .content-wrapper .text-wrapper .description {
+    line-height: 1.25rem;
+    font-size: 15px;
+  }
+}
+#main .content-wrapper .button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.text-element .letter {
-  transform-origin: 0 100%;
-  display: inline-block;
-  line-height: 1em;
+#informations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1280px;
+  width: 80%;
+  margin: 0px auto 56px;
+}
+@media (max-width: 1024px) {
+  #informations {
+    gap: 8px;
+  }
+}
+#informations .info-box {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-bottom: 32px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box {
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+  }
+}
+#informations .info-box h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+}
+#informations .info-box h4 {
+  font-size: 36px;
+}
+@media (max-width: 1024px) {
+  #informations .info-box h4 {
+    font-size: 20px;
+  }
 }
 
 html,

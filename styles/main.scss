@@ -1,0 +1,77 @@
+@import "./responsive.scss";
+
+#main {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 40px;
+  max-width: 1280px;
+  width: 80%;
+  margin: 120px auto;
+
+  @media (max-width: $medium) {
+    grid-template-columns: 2fr 2fr;
+    height: 400px;
+    margin: 120px auto 320px;
+  }
+
+  .image-wrapper {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $medium) {
+      grid-column: 1/4;
+      height: 350px;
+      margin-bottom: 60px;
+    }
+  }
+
+  .content-wrapper {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: $medium) {
+      display: grid;
+      grid-column: 1/4;
+      grid-template-columns: 2fr 2fr;
+      gap: 60px;
+    }
+
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-bottom: 24px;
+
+      .planet-name {
+        display: flex;
+        font-size: 36px;
+
+        @media (max-width: $medium) {
+          font-size: 20px;
+        }
+      }
+
+      .description {
+        text-align: justify;
+        line-height: 1.5rem;
+        font-size: 18px;
+
+        @media (max-width: $medium) {
+          line-height: 1.25rem;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

@@ -12,27 +12,13 @@ const Main = () => {
   const { images } = currentPlanet;
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "4fr 3fr",
-        gap: "40px",
-        maxWidth: "1280px",
-        width: "80%",
-        margin: "120px auto 92px",
-      }}
-    >
+    <div id="main" className="container">
       <motion.div
         key={currentPlanet.name}
         initial={{ opacity: 0, scale: 0.1, rotate: 180 }}
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
         transition={{ duration: 1 }}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
+        className="image-wrapper"
       >
         <Image
           src={isInternal ? images.internal.src : images.planet.src}
@@ -65,53 +51,33 @@ const Main = () => {
           </motion.div>
         )}
       </motion.div>
-      <div
-        style={{
-          height: "500px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <div
-          style={{
-            overflow: "hidden",
-            display: "flex",
-          }}
-          key={currentPlanet.name}
-        >
-          {currentPlanet.name.split("").map((char, index) => (
-            <motion.h1
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 + index / 10 }}
-              className="antonio-medium uppercase font-60 m-0"
+      <div className="content-wrapper">
+        <div className="text-wrapper">
+          <div className="planet-name" key={currentPlanet.name}>
+            {currentPlanet.name.split("").map((char, index) => (
+              <motion.h1
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 + index / 10 }}
+                className="antonio-medium uppercase m-0"
+              >
+                {char}
+              </motion.h1>
+            ))}
+          </div>
+          <p className="m-0 description">{currentContent.content}</p>
+          <p className="m-0">
+            Source:{" "}
+            <a
+              className="external-link"
+              href={currentContent.source}
+              target="_blank"
             >
-              {char}
-            </motion.h1>
-          ))}
+              Wikipedia
+            </a>
+          </p>
         </div>
-        <p
-          className="m-0"
-          style={{
-            textAlign: "justify",
-            lineHeight: "1.5rem",
-            fontSize: "18px",
-          }}
-        >
-          {currentContent.content}
-        </p>
-        <p className="m-0">
-          Source:{" "}
-          <a
-            className="external-link"
-            href={currentContent.source}
-            target="_blank"
-          >
-            Wikipedia
-          </a>
-        </p>
-        <Buttons />
+        <Buttons className="button-wrapper" />
       </div>
     </div>
   );

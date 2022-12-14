@@ -1,43 +1,55 @@
 @import "./colors.scss";
+@import "./responsive.scss";
 
-.button {
-  border: 1px solid $bright-grey;
-  transition: all 0.25s linear;
-}
+.button-wrapper {
+  .button {
+    border: 1px solid $bright-grey;
+    transition: all 0.25s linear;
+    display: flex;
+    padding: 20px 32px;
+    cursor: pointer;
+    font-size: 14px;
 
-.button:hover {
-  background-color: $bright-grey;
-  scale: 105%;
-}
+    @media (max-width: $medium) {
+      padding: 16px 28px;
+      font-size: 12px;
+    }
+  }
 
-.button-active-mercury {
-  background-color: $mercury;
-}
+  .button:hover {
+    background-color: $bright-grey;
+    scale: 105%;
+  }
 
-.button-active-venus {
-  background-color: $venus;
-}
+  .button-active-mercury {
+    background-color: $mercury;
+  }
 
-.button-active-earth {
-  background-color: $earth;
-}
+  .button-active-venus {
+    background-color: $venus;
+  }
 
-.button-active-mars {
-  background-color: $mars;
-}
+  .button-active-earth {
+    background-color: $earth;
+  }
 
-.button-active-jupiter {
-  background-color: $jupiter;
-}
+  .button-active-mars {
+    background-color: $mars;
+  }
 
-.button-active-saturn {
-  background-color: $saturn;
-}
+  .button-active-jupiter {
+    background-color: $jupiter;
+  }
 
-.button-active-uranus {
-  background-color: $uranus;
-}
+  .button-active-saturn {
+    background-color: $saturn;
+  }
 
-.button-active-neptune {
-  background-color: $neptune;
+  .button-active-uranus {
+    background-color: $uranus;
+  }
+
+  .button-active-neptune {
+    background-color: $neptune;
+  }
 }

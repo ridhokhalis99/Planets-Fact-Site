@@ -3,45 +3,46 @@ body {
   color: white;
 }
 
-.button {
+.button-wrapper .button {
   border: 1px solid #393950;
   transition: all 0.25s linear;
+  display: flex;
+  padding: 20px 32px;
+  cursor: pointer;
+  font-size: 14px;
 }
-
-.button:hover {
+@media (max-width: 1024px) {
+  .button-wrapper .button {
+    padding: 16px 28px;
+    font-size: 12px;
+  }
+}
+.button-wrapper .button:hover {
   background-color: #393950;
   scale: 105%;
 }
-
-.button-active-mercury {
+.button-wrapper .button-active-mercury {
   background-color: #419ebb;
 }
-
-.button-active-venus {
+.button-wrapper .button-active-venus {
   background-color: #eda249;
 }
-
-.button-active-earth {
+.button-wrapper .button-active-earth {
   background-color: #6d2ed5;
 }
-
-.button-active-mars {
+.button-wrapper .button-active-mars {
   background-color: #d14c32;
 }
-
-.button-active-jupiter {
+.button-wrapper .button-active-jupiter {
   background-color: #d83a34;
 }
-
-.button-active-saturn {
+.button-wrapper .button-active-saturn {
   background-color: #cd5120;
 }
-
-.button-active-uranus {
+.button-wrapper .button-active-uranus {
   background-color: #1ec1a2;
 }
-
-.button-active-neptune {
+.button-wrapper .button-active-neptune {
   background-color: #2d68f0;
 }
 

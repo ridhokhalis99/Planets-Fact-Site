@@ -1,13 +1,28 @@
 @import "./colors.scss";
+@import "./responsive.scss";
 
 #navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 64px;
-  div {
+
+  @media (max-width: $medium) {
+    margin-top: 12px;
+    flex-direction: column;
+    gap: 52px;
+    text-align: center;
+  }
+
+  .nav-link-wrapper {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2.5rem;
+    font-size: 14px;
+
+    @media (max-width: $medium) {
+      margin: 0 auto;
+      font-size: 12px;
+    }
 
     .nav-link {
       color: $regent-grey;
@@ -27,6 +42,10 @@
       top: -32px;
       opacity: 0;
       transition: all 0.25s linear;
+
+      @media (max-width: $medium) {
+        top: 32px;
+      }
     }
 
     .nav-link-active-mercury {

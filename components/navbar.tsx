@@ -15,7 +15,7 @@ const Navbar = () => {
       >
         The Planets
       </a>
-      <div>
+      <div className="nav-link-wrapper">
         {planets.map(({ name }: { name: string }, index: number) => {
           const isPlanetActive = name === currentPlanet.name;
           const isHovered = index === indexHovered;
@@ -30,7 +30,7 @@ const Navbar = () => {
             >
               <a
                 key={index}
-                className={`spartan-semibold uppercase font-14 tracking-wide nav-link ${
+                className={`spartan-semibold uppercase tracking-wide nav-link ${
                   (isHovered || isPlanetActive) && "nav-link-active"
                 }`}
                 ref={ref}
