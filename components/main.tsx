@@ -33,12 +33,7 @@ const Main = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            style={{
-              width: "40%",
-              height: "40%",
-              position: "absolute",
-              bottom: "-30px",
-            }}
+            className="image-geology"
           >
             <Image
               src={images.geology.src}

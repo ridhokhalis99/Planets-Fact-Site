@@ -40,7 +40,7 @@ const Navbar = () => {
             const isPlanetActive = name === currentPlanet.name;
             const isHovered = index === planetIndexHovered;
             const ref: any = useRef();
-            const borderWidth = ref?.current?.clientWidth;
+            const borderWidth = ref?.current?.clientWidth || 49;
 
             return (
               <div
@@ -89,18 +89,13 @@ const Navbar = () => {
       </div>
       <div className="content-navigator grey-border-b">
         {CONTENT_TYPE.map(({ type, nav }, index) => {
-          const isCurrentType = type === currentContentType;
-          const isHovered = type === contentTypeHovered;
+          const isCurrentType: boolean = type === currentContentType;
+          const isHovered: boolean = type === contentTypeHovered;
           const ref: any = useRef();
-          const borderWidth = ref?.current?.clientWidth;
+          const borderWidth = ref?.current?.clientWidth || 78;
 
           return (
-            <div
-              style={{
-                display: "flex",
-                position: "relative",
-              }}
-            >
+            <div className="content-nav-link">
               <a
                 key={index}
                 className={`spartan-semibold font-12 uppercase tracking-wider nav-link ${
@@ -150,13 +145,7 @@ const Navbar = () => {
                   }}
                   className="nav-link-dropdown grey-border-b"
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "24px",
-                      alignItems: "center",
-                    }}
-                  >
+                  <div className="circle-planet">
                     <div className={`circle-${planetName}`} />
                     <a className="uppercase spartan-semibold">{name}</a>
                   </div>

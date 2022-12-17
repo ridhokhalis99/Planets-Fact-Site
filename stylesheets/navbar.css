@@ -13,6 +13,10 @@ body {
     display: none;
   }
 }
+#navbar .content-navigator .content-nav-link {
+  display: flex;
+  position: relative;
+}
 #navbar .navbar-overlay {
   position: absolute;
   z-index: 100;
@@ -32,6 +36,11 @@ body {
   margin-left: 32px;
   margin-right: 48px;
   cursor: pointer;
+}
+#navbar .navbar-overlay .circle-planet {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 #navbar .navbar-overlay .circle-mercury {
   background-color: #419ebb;

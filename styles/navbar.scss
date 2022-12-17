@@ -10,6 +10,11 @@
     @media (min-width: $small) {
       display: none;
     }
+
+    .content-nav-link {
+      display: flex;
+      position: relative;
+    }
   }
 
   .navbar-overlay {
@@ -30,6 +35,12 @@
       margin-left: 32px;
       margin-right: 48px;
       cursor: pointer;
+    }
+
+    .circle-planet {
+      display: flex;
+      gap: 24px;
+      align-items: center;
     }
 
     .circle-mercury {

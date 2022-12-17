@@ -7,6 +7,10 @@
   margin-bottom: 1rem;
 }
 
+.ml-2 {
+  margin-left: 2rem;
+}
+
 body {
   background-color: #070724;
   color: white;
@@ -23,7 +27,6 @@ body {
 @media (max-width: 1024px) {
   .button-wrapper .button {
     padding: 16px 28px;
-    font-size: 12px;
   }
 }
 .button-wrapper .button:hover {
@@ -75,6 +78,10 @@ body {
     display: none;
   }
 }
+#navbar .content-navigator .content-nav-link {
+  display: flex;
+  position: relative;
+}
 #navbar .navbar-overlay {
   position: absolute;
   z-index: 100;
@@ -94,6 +101,11 @@ body {
   margin-left: 32px;
   margin-right: 48px;
   cursor: pointer;
+}
+#navbar .navbar-overlay .circle-planet {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 #navbar .navbar-overlay .circle-mercury {
   background-color: #419ebb;
@@ -332,7 +344,7 @@ body {
   gap: 40px;
   max-width: 1280px;
   width: 80%;
-  margin: 120px auto;
+  margin: 90px auto 60px;
 }
 @media (max-width: 640px) {
   #main {
@@ -345,7 +357,7 @@ body {
   #main {
     grid-template-columns: 2fr 2fr;
     height: 400px;
-    margin: 120px auto 300px;
+    margin: 90px auto 300px;
     width: 90%;
   }
 }
@@ -368,6 +380,12 @@ body {
     height: 350px;
     margin-bottom: 60px;
   }
+}
+#main .image-wrapper .image-geology {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  bottom: -30px;
 }
 #main .content-wrapper {
   height: 500px;
