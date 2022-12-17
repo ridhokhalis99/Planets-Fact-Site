@@ -5,6 +5,7 @@ import planets from "../tools/planets";
 import hamburgerIcon from "../assets/icon-hamburger.svg";
 import chevronIcon from "../assets/icon-chevron.svg";
 import { CONTENT_TYPE } from "../tools/constants";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [planetIndexHovered, setPlanetIndexHovered] = useState<number | null>(
@@ -126,50 +127,53 @@ const Navbar = () => {
           );
         })}
       </div>
-      {isShowNavbarOverlay && (
-        <div className="navbar-overlay">
-          {planets.map(({ name }: { name: string }, index: number) => {
-            const planetName = name.toLowerCase();
-            return (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "24px 0px",
-                  marginLeft: "32px",
-                  marginRight: "48px",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  setCurrentPlanet(planets[index]);
-                  setIsShowNavbarOverlay(false);
-                }}
-                className="grey-border-b"
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "24px",
-                    alignItems: "center",
+      <AnimatePresence>
+        {isShowNavbarOverlay && (
+          <motion.div
+            className="navbar-overlay"
+            initial={{
+              height: 0,
+              opacity: 0,
+            }}
+            animate={{ height: "125%", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {planets.map(({ name }: { name: string }, index: number) => {
+              const planetName = name.toLowerCase();
+              return (
+                <motion.div
+                  key={index}
+                  onClick={() => {
+                    setCurrentPlanet(planets[index]);
+                    setIsShowNavbarOverlay(false);
                   }}
+                  className="nav-link-dropdown grey-border-b"
                 >
-                  <div className={`circle-${planetName}`} />
-                  <a className="uppercase spartan-semibold">{name}</a>
-                </div>
-                <div>
-                  <Image
-                    src={chevronIcon.src}
-                    alt="chevron button"
-                    width={chevronIcon.width}
-                    height={chevronIcon.height}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "24px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div className={`circle-${planetName}`} />
+                    <a className="uppercase spartan-semibold">{name}</a>
+                  </div>
+                  <div>
+                    <Image
+                      src={chevronIcon.src}
+                      alt="chevron button"
+                      width={chevronIcon.width}
+                      height={chevronIcon.height}
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
