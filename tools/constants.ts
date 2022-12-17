@@ -1,5 +1,5 @@
-export const currentContentDecider = (currentContentType: string) => {
-  const isInternal = currentContentType === "Internal Structure";
-  const isGeology = currentContentType === "Surface Geology";
-  return { isInternal, isGeology };
-};
+export const CONTENT_TYPE = [
+  { type: "Overview", nav: "Overview" },
+  { type: "Internal Structure", nav: "Structure" },
+  { type: "Surface Geology", nav: "Surface" },
+];

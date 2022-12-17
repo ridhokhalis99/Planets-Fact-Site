@@ -65,13 +65,90 @@ body {
   color: white;
 }
 
-#navbar {
+#navbar .content-navigator {
+  display: flex;
+  justify-content: space-around;
+  padding: 22px 0;
+}
+@media (min-width: 640px) {
+  #navbar .content-navigator {
+    display: none;
+  }
+}
+#navbar .navbar-overlay {
+  position: absolute;
+  z-index: 100;
+  background-color: #070724;
+  width: 100%;
+  height: 100%;
+  top: 80px;
+}
+@media (min-width: 640px) {
+  #navbar .navbar-overlay {
+    display: none;
+  }
+}
+#navbar .navbar-overlay .circle-mercury {
+  background-color: #419ebb;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-venus {
+  background-color: #eda249;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-earth {
+  background-color: #6d2ed5;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-mars {
+  background-color: #d14c32;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-jupiter {
+  background-color: #d83a34;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-saturn {
+  background-color: #cd5120;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-uranus {
+  background-color: #1ec1a2;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .navbar-overlay .circle-neptune {
+  background-color: #2d68f0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+#navbar .main-navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 64px;
 }
-@media (max-width: 1024px) {
-  #navbar {
+@media (max-width: 640px) {
+  #navbar .main-navbar {
+    flex-direction: row;
+    padding: 20px 56px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  #navbar .main-navbar {
     margin-top: 12px;
     flex-direction: column;
     gap: 52px;
@@ -79,70 +156,88 @@ body {
     padding: 20px 24px;
   }
 }
-#navbar div {
+#navbar .main-navbar .hamburger-menu {
+  cursor: pointer;
+  margin: auto 0;
+}
+@media (min-width: 640px) {
+  #navbar .main-navbar .hamburger-menu {
+    display: none;
+  }
+}
+#navbar .main-navbar .nav-link-container {
   display: flex;
   align-items: center;
   gap: 2.5rem;
   font-size: 14px;
 }
+@media (max-width: 640px) {
+  #navbar .main-navbar .nav-link-container {
+    display: none;
+  }
+}
 @media (max-width: 1024px) {
-  #navbar div {
+  #navbar .main-navbar .nav-link-container {
     margin: 0 auto;
     font-size: 12px;
   }
 }
-#navbar div .nav-link {
-  color: #90909d;
+#navbar .nav-link {
+  color: white;
+  opacity: 0.5;
   transition: all 0.1s linear;
 }
-#navbar div .nav-link:hover {
+#navbar .nav-link:hover {
   color: white;
+  opacity: 1;
 }
-#navbar div .nav-link-active {
+#navbar .nav-link-active {
   color: white;
+  opacity: 1;
 }
-#navbar div .nav-link-border {
+#navbar .nav-link-border {
   position: absolute;
   border: 1px solid;
   z-index: 5;
   top: -32px;
+  left: -10px;
   opacity: 0;
   transition: all 0.25s linear;
 }
 @media (max-width: 1024px) {
-  #navbar div .nav-link-border {
+  #navbar .nav-link-border {
     top: 32px;
   }
 }
-#navbar div .nav-link-active-mercury {
+#navbar .nav-link-active-mercury {
   border-color: #419ebb;
   opacity: 1;
 }
-#navbar div .nav-link-active-venus {
+#navbar .nav-link-active-venus {
   border-color: #eda249;
   opacity: 1;
 }
-#navbar div .nav-link-active-earth {
+#navbar .nav-link-active-earth {
   border-color: #6d2ed5;
   opacity: 1;
 }
-#navbar div .nav-link-active-mars {
+#navbar .nav-link-active-mars {
   border-color: #d14c32;
   opacity: 1;
 }
-#navbar div .nav-link-active-jupiter {
+#navbar .nav-link-active-jupiter {
   border-color: #d83a34;
   opacity: 1;
 }
-#navbar div .nav-link-active-saturn {
+#navbar .nav-link-active-saturn {
   border-color: #cd5120;
   opacity: 1;
 }
-#navbar div .nav-link-active-uranus {
+#navbar .nav-link-active-uranus {
   border-color: #1ec1a2;
   opacity: 1;
 }
-#navbar div .nav-link-active-neptune {
+#navbar .nav-link-active-neptune {
   border-color: #2d68f0;
   opacity: 1;
 }
@@ -169,6 +264,10 @@ body {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.font-10 {
+  font-size: 10px;
 }
 
 .font-12 {
@@ -207,6 +306,10 @@ body {
   letter-spacing: 0.1rem;
 }
 
+.tracking-wider {
+  letter-spacing: 0.15rem;
+}
+
 .text-regent-grey {
   color: #90909d;
 }
@@ -224,7 +327,14 @@ body {
   width: 80%;
   margin: 120px auto;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main {
+    display: block;
+    width: 85%;
+    margin: 60px auto 1px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main {
     grid-template-columns: 2fr 2fr;
     height: 400px;
@@ -239,7 +349,13 @@ body {
   align-items: center;
   position: relative;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .image-wrapper {
+    height: 250px;
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .image-wrapper {
     grid-column: 1/4;
     height: 350px;
@@ -252,7 +368,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper {
+    display: block;
+    text-align: center;
+    height: auto;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper {
     display: grid;
     grid-column: 1/4;
@@ -270,7 +393,13 @@ body {
   display: flex;
   font-size: 36px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper .text-wrapper .planet-name {
+    font-size: 18px;
+    margin: 24px auto 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper .text-wrapper .planet-name {
     font-size: 20px;
   }
@@ -280,10 +409,16 @@ body {
   line-height: 1.5rem;
   font-size: 18px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper .text-wrapper .description {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper .text-wrapper .description {
     line-height: 1.25rem;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 #main .content-wrapper .button-wrapper {
@@ -291,45 +426,68 @@ body {
   flex-direction: column;
   gap: 12px;
 }
+@media (max-width: 640px) {
+  #main .content-wrapper .button-wrapper {
+    display: none;
+  }
+}
 
 #informations {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 16px;
   max-width: 1280px;
   width: 80%;
-  margin: 0px auto 56px;
+  margin: 0 auto;
+  padding-bottom: 56px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
   #informations {
-    gap: 8px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  #informations {
     width: 90%;
   }
 }
 #informations .info-box {
-  padding-top: 24px;
-  padding-left: 24px;
-  padding-bottom: 32px;
+  padding: 20px 24px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
   #informations .info-box {
-    padding-top: 12px;
-    padding-left: 12px;
-    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  #informations .info-box {
+    padding: 16px 24px;
   }
 }
 #informations .info-box h3 {
   font-size: 14px;
   margin-bottom: 12px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
   #informations .info-box h3 {
-    font-size: 11px;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  #informations .info-box h3 {
+    font-size: 12px;
     margin-bottom: 8px;
   }
 }
 #informations .info-box h4 {
-  font-size: 36px;
+  font-size: 32px;
 }
 @media (max-width: 1024px) {
   #informations .info-box h4 {
@@ -361,11 +519,11 @@ a {
 }
 
 .grey-border {
-  border: 1px solid #393950;
+  border: 1px solid #20203a;
 }
 
 .grey-border-b {
-  border-bottom: 1px solid #393950;
+  border-bottom: 1px solid #20203a;
 }
 
 /*# sourceMappingURL=globals.css.map */

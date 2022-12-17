@@ -1,4 +1,5 @@
 import { useContentDecider } from "../contexts/contentContext";
+import { CONTENT_TYPE } from "../tools/constants";
 
 const Button = ({ text, index }: { text: string; index: number }) => {
   const { currentPlanet, currentContentType, setCurrentContentType } =
@@ -20,11 +21,10 @@ const Button = ({ text, index }: { text: string; index: number }) => {
 };
 
 const Buttons = ({ className }: { className: string }) => {
-  const buttonTexts = ["Overview", "Internal Structure", "Surface Geology"];
   return (
     <div className={className}>
-      {buttonTexts.map((text: string, index: number) => (
-        <Button key={index} text={text} index={index} />
+      {CONTENT_TYPE.map(({ type }, index) => (
+        <Button key={index} text={type} index={index} />
       ))}
     </div>
   );

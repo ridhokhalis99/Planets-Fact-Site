@@ -8,7 +8,13 @@
   width: 80%;
   margin: 120px auto;
 
-  @media (max-width: $medium) {
+  @media (max-width: $small) {
+    display: block;
+    width: 85%;
+    margin: 60px auto 1px;
+  }
+
+  @media (min-width: $small) and (max-width: $medium) {
     grid-template-columns: 2fr 2fr;
     height: 400px;
     margin: 120px auto 300px;
@@ -22,7 +28,12 @@
     align-items: center;
     position: relative;
 
-    @media (max-width: $medium) {
+    @media (max-width: $small) {
+      height: 250px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $small) and (max-width: $medium) {
       grid-column: 1/4;
       height: 350px;
       margin-bottom: 60px;
@@ -35,7 +46,13 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media (max-width: $medium) {
+    @media (max-width: $small) {
+      display: block;
+      text-align: center;
+      height: auto;
+    }
+
+    @media (min-width: $small) and (max-width: $medium) {
       display: grid;
       grid-column: 1/4;
       grid-template-columns: 2fr 2fr;
@@ -52,7 +69,12 @@
         display: flex;
         font-size: 36px;
 
-        @media (max-width: $medium) {
+        @media (max-width: $small) {
+          font-size: 18px;
+          margin: 24px auto 0;
+        }
+
+        @media (min-width: $small) and (max-width: $medium) {
           font-size: 20px;
         }
       }
@@ -62,9 +84,14 @@
         line-height: 1.5rem;
         font-size: 18px;
 
-        @media (max-width: $medium) {
+        @media (max-width: $small) {
+          text-align: center;
+          font-size: 16px;
+        }
+
+        @media (min-width: $small) and (max-width: $medium) {
           line-height: 1.25rem;
-          font-size: 15px;
+          font-size: 16px;
         }
       }
     }
@@ -73,6 +100,10 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+
+      @media (max-width: $small) {
+        display: none;
+      }
     }
   }
 }

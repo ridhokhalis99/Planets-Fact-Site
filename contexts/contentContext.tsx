@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext, useContext } from "react";
 import planets from "../tools/planets";
-import { currentContentDecider } from "../tools/constants";
+import { currentContentDecider } from "../tools";
 import { contentContextType } from "../interfaces/types";
 
 const earth = planets[2];

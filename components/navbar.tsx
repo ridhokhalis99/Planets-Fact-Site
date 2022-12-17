@@ -1,59 +1,175 @@
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { useContentDecider } from "../contexts/contentContext";
 import planets from "../tools/planets";
+import hamburgerIcon from "../assets/icon-hamburger.svg";
+import chevronIcon from "../assets/icon-chevron.svg";
+import { CONTENT_TYPE } from "../tools/constants";
 
 const Navbar = () => {
-  const [indexHovered, setIndexHovered] = useState<any>(null);
-  const { currentPlanet, setCurrentPlanet } = useContentDecider();
+  const [planetIndexHovered, setPlanetIndexHovered] = useState<number | null>(
+    null
+  );
+  const [contentTypeHovered, setContentTypeHovered] = useState<string | null>(
+    null
+  );
+  const [isShowNavbarOverlay, setIsShowNavbarOverlay] =
+    useState<boolean>(false);
+  const {
+    currentPlanet,
+    setCurrentPlanet,
+    currentContentType,
+    setCurrentContentType,
+  } = useContentDecider();
+  const planetName = currentPlanet.name.toLowerCase();
+
   return (
-    <div id="navbar" className="grey-border-b">
-      <a
-        className="antonio-medium uppercase font-28"
-        onClick={() => {
-          setCurrentPlanet(planets[2]);
-        }}
-      >
-        The Planets
-      </a>
-      <div>
-        {planets.map(({ name }: { name: string }, index: number) => {
-          const isPlanetActive = name === currentPlanet.name;
-          const isHovered = index === indexHovered;
+    <div id="navbar">
+      <div className="main-navbar grey-border-b">
+        <a
+          className="antonio-medium uppercase font-28"
+          onClick={() => {
+            setCurrentPlanet(planets[2]);
+          }}
+        >
+          The Planets
+        </a>
+        <div className="nav-link-container">
+          {planets.map(({ name }: { name: string }, index: number) => {
+            const isPlanetActive = name === currentPlanet.name;
+            const isHovered = index === planetIndexHovered;
+            const ref: any = useRef();
+            const borderWidth = ref?.current?.clientWidth;
+
+            return (
+              <div
+                style={{
+                  display: "flex",
+                  position: "relative",
+                }}
+              >
+                <a
+                  key={index}
+                  className={`spartan-semibold uppercase tracking-wide nav-link ${
+                    (isHovered || isPlanetActive) && "nav-link-active"
+                  }`}
+                  ref={ref}
+                  onClick={() => {
+                    setCurrentPlanet(planets[index]);
+                  }}
+                  onMouseEnter={() => setPlanetIndexHovered(index)}
+                  onMouseLeave={() => setPlanetIndexHovered(null)}
+                >
+                  {name}
+                </a>
+                <div
+                  style={{
+                    width: borderWidth + 20,
+                  }}
+                  className={`nav-link-border ${
+                    isPlanetActive && `nav-link-active-${planetName}`
+                  }`}
+                />
+              </div>
+            );
+          })}
+        </div>
+        <div
+          className="hamburger-menu"
+          onClick={() => setIsShowNavbarOverlay((prev) => !prev)}
+        >
+          <Image
+            src={hamburgerIcon.src}
+            alt="hamburger menu"
+            width={hamburgerIcon.width}
+            height={hamburgerIcon.height}
+          />
+        </div>
+      </div>
+      <div className="content-navigator grey-border-b">
+        {CONTENT_TYPE.map(({ type, nav }, index) => {
+          const isCurrentType = type === currentContentType;
+          const isHovered = type === contentTypeHovered;
           const ref: any = useRef();
           const borderWidth = ref?.current?.clientWidth;
-          const planetName = currentPlanet.name.toLowerCase();
+
           return (
             <div
               style={{
+                display: "flex",
                 position: "relative",
               }}
             >
               <a
                 key={index}
-                className={`spartan-semibold uppercase tracking-wide nav-link ${
-                  (isHovered || isPlanetActive) && "nav-link-active"
+                className={`spartan-semibold font-12 uppercase tracking-wider nav-link ${
+                  (isCurrentType || isHovered) && "nav-link-active"
                 }`}
-                ref={ref}
                 onClick={() => {
-                  setCurrentPlanet(planets[index]);
+                  setCurrentContentType(type);
                 }}
-                onMouseEnter={() => setIndexHovered(index)}
-                onMouseLeave={() => setIndexHovered(null)}
+                ref={ref}
+                onMouseEnter={() => setContentTypeHovered(type)}
+                onMouseLeave={() => setContentTypeHovered(null)}
               >
-                {name}
+                {nav}
               </a>
               <div
                 style={{
-                  width: borderWidth,
+                  width: borderWidth + 20,
                 }}
                 className={`nav-link-border ${
-                  isPlanetActive && `nav-link-active-${planetName}`
+                  isCurrentType && `nav-link-active-${planetName}`
                 }`}
               />
             </div>
           );
         })}
       </div>
+      {isShowNavbarOverlay && (
+        <div className="navbar-overlay">
+          {planets.map(({ name }: { name: string }, index: number) => {
+            const planetName = name.toLowerCase();
+            return (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "24px 0px",
+                  marginLeft: "32px",
+                  marginRight: "48px",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  setCurrentPlanet(planets[index]);
+                  setIsShowNavbarOverlay(false);
+                }}
+                className="grey-border-b"
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "24px",
+                    alignItems: "center",
+                  }}
+                >
+                  <div className={`circle-${planetName}`} />
+                  <a className="uppercase spartan-semibold">{name}</a>
+                </div>
+                <div>
+                  <Image
+                    src={chevronIcon.src}
+                    alt="chevron button"
+                    width={chevronIcon.width}
+                    height={chevronIcon.height}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

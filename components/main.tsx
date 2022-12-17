@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Buttons from "./buttons";
 import { motion } from "framer-motion";
-import { currentContentDecider } from "../tools/constants";
+import { currentContentDecider } from "../tools";
 import { useContentDecider } from "../contexts/contentContext";
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
   const { images } = currentPlanet;
 
   return (
-    <div id="main" className="container">
+    <div id="main">
       <motion.div
         key={currentPlanet.name}
         initial={{ opacity: 0, scale: 0.1, rotate: 180 }}

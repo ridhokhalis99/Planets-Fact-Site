@@ -3,39 +3,54 @@
 #informations {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 16px;
   max-width: 1280px;
   width: 80%;
-  margin: 0px auto 56px;
+  margin: 0 auto;
+  padding-bottom: 56px;
 
-  @media (max-width: $medium) {
-    gap: 8px;
+  @media (max-width: $small) {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (min-width: $small) and (max-width: $medium) {
     width: 90%;
   }
 
   .info-box {
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-bottom: 32px;
+    padding: 20px 24px;
 
-    @media (max-width: $medium) {
-      padding-top: 12px;
-      padding-left: 12px;
-      padding-bottom: 12px;
+    @media (max-width: $small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+    }
+
+    @media (min-width: $small) and (max-width: $medium) {
+      padding: 16px 24px;
     }
 
     h3 {
       font-size: 14px;
       margin-bottom: 12px;
 
-      @media (max-width: $medium) {
-        font-size: 11px;
+      @media (max-width: $small) {
+        font-size: 12px;
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $small) and (max-width: $medium) {
+        font-size: 12px;
         margin-bottom: 8px;
       }
     }
 
     h4 {
-      font-size: 36px;
+      font-size: 32px;
 
       @media (max-width: $medium) {
         font-size: 20px;

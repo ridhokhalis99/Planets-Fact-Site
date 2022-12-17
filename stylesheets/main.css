@@ -6,7 +6,14 @@
   width: 80%;
   margin: 120px auto;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main {
+    display: block;
+    width: 85%;
+    margin: 60px auto 1px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main {
     grid-template-columns: 2fr 2fr;
     height: 400px;
@@ -21,7 +28,13 @@
   align-items: center;
   position: relative;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .image-wrapper {
+    height: 250px;
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .image-wrapper {
     grid-column: 1/4;
     height: 350px;
@@ -34,7 +47,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper {
+    display: block;
+    text-align: center;
+    height: auto;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper {
     display: grid;
     grid-column: 1/4;
@@ -52,7 +72,13 @@
   display: flex;
   font-size: 36px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper .text-wrapper .planet-name {
+    font-size: 18px;
+    margin: 24px auto 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper .text-wrapper .planet-name {
     font-size: 20px;
   }
@@ -62,16 +88,27 @@
   line-height: 1.5rem;
   font-size: 18px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  #main .content-wrapper .text-wrapper .description {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
   #main .content-wrapper .text-wrapper .description {
     line-height: 1.25rem;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 #main .content-wrapper .button-wrapper {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+@media (max-width: 640px) {
+  #main .content-wrapper .button-wrapper {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
